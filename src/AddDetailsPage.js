@@ -2,10 +2,10 @@ import React, { Component } from "react"
 
 export default class AddDetailsPage extends Component{
 
-    savePlant(event){
+    async savePlant(event){
         event.preventDefault()
         const newPlant = {
-
+            name:this.state.name
         }
     }
     state = {plant:{name:"", genre:"", imgurl:"", browse:"", alarms:"", notes:"", save:""}}
@@ -35,7 +35,7 @@ export default class AddDetailsPage extends Component{
                     Notes:
                     <textarea>Enter notes or description here</textarea>
                     <br/>
-                    <button>Save</button>
+                    <button onClick={this.savePlant}>Save</button>
                 </form>
             </div>
         )

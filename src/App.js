@@ -3,10 +3,28 @@ import Main from './Main';
 import { Switch, Route} from 'react-router-dom'
 import './App.css'
 import AddDetailsPage from './AddDetailsPage';
+import Veiwpage from './VeiwPage';
+
 class App extends Component {
   
+  renderAddDetailsPage = () =>{
+    return(
+      <div>
+        <AddDetailsPage/>
+      </div>
+    )
+  }
+
+  renderVeiwPage = () => {
+    return(
+      <div>
+        <Veiwpage/>
+      </div>
+    )
+  }
 
   render() {
+
     return (
       <div> 
             <Switch>

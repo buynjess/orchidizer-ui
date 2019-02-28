@@ -5,13 +5,13 @@ export default class AddDetailsPage extends Component{
     async savePlant(){
         // event.preventDefault()
         const newPlant = {
-            name:this.state.name,
-            genre:this.state.genre,
-            imgurl:this.state.imgurl,
-            browse:this.state.browse,
-            alarms:this.state.alarms,
-            notes:this.state.notes,
-            save:this.state.save
+            name:this.state.preName,
+            genre:this.state.preGenre,
+            imgurl:this.state.preImgurl,
+            browse:this.state.preBrowse,
+            alarms:this.state.preAlarms,
+            notes:this.state.preNotes,
+            save:this.state.preSave
         }
 
         const resp = await fetch ('http://localhost:4001/',{
@@ -23,7 +23,7 @@ export default class AddDetailsPage extends Component{
         const newPlants =await resp.json()
         this.setState({plants: newPlants })
     }
-    state = {plant:{name:"", genre:"", imgurl:"", browse:"", alarms:"", notes:"", save:""}}
+    state = {plant:{ preName:"", preGenre:"", preImgurl:"", preBrowse:"", preAlarms:"", preNotes:"", preSave:"", plants:[]}}
 
     render(){
         return(
@@ -47,11 +47,12 @@ export default class AddDetailsPage extends Component{
                     Alarm Modal
                 </section> */}
                 <form onSubmit={(e)=> {e.preventDefault(); this.savePlant()}}>
+                {/* <form> */}
                     Notes:
                     <textarea></textarea>
                     <br/>
-                    {/* <button onClick={this.savePlant}>Save</button> */}
-                    <button type="submit">Save</button>
+                    <button onClick={this.savePlant}>Save</button>
+                    {/* <button type="submit">Save</button> */}
                 </form>
             </div>
         )

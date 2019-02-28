@@ -7,6 +7,11 @@ import Veiwpage from './VeiwPage';
 
 class App extends Component {
   
+  savePlant = () => {
+
+  }
+
+
   renderAddDetailsPage = () =>{
     return(
       <div>
@@ -29,7 +34,7 @@ class App extends Component {
       <div> 
             <Switch>
             <Route exact path="/" component={Main} />
-            <Route exact path="/flower/:id" component={Main} />
+            <Route exact path="/orchid/:id" component={Main} />
             <Route exact path="/AddDetailsPage" component={AddDetailsPage}/>
             </Switch>
         </div>

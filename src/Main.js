@@ -10,14 +10,14 @@ export default class Main extends Component{
                     <img className="image"  src="" alt="orchid"/>
                 </div>
                 <div className="buttons">
-                <Link to="/flower/dendrobium"><button >Dendrobium</button></Link>
-                <Link to="/flower/dendrobium"><button >Cattleya</button></Link>
-                <Link to="/flower/dendrobium"><button >Oncidium</button></Link>
-                <Link to="/flower/dendrobium"><button >Phalenopsis</button></Link>
-                <Link to="/flower/dendrobium"><button >Other</button></Link>  
-                <Link to="/flower/dendrobium"><button >Wish List</button></Link>
-                <Link to="/flower/dendrobium"><button >Death</button></Link>
-                <Link to="/flower/dendrobium"><button >Create</button></Link>       
+                <Link to="/orchid/dendrobium"><button >Dendrobium</button></Link>
+                <Link to="/orchid/cattleya"><button >Cattleya</button></Link>
+                <Link to="/orchid/oncidum"><button >Oncidium</button></Link>
+                <Link to="/orchid/phalenopsis"><button >Phalenopsis</button></Link>
+                <Link to="/orchid/other"><button >Other</button></Link>  
+                <Link to="/orchid/wishList"><button >Wish List</button></Link>
+                <Link to="/orchid/death"><button >Death</button></Link>
+                <Link to="/orchid/create"><button >Create</button></Link>       
                 </div>
             </div>
         )

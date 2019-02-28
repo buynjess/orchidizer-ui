@@ -1,40 +1,44 @@
 import React, { Component } from "react"
+import Redirect from "react-router-dom"
 
 export default class AddDetailsPage extends Component{
 
-    async savePlant(){
+     savePlant = async () => {
+         console.log(this.props)
         // event.preventDefault()
         const newPlant = {
-            name:this.state.preName,
-            genre:this.state.preGenre,
-            imgurl:this.state.preImgurl,
-            browse:this.state.preBrowse,
-            alarms:this.state.preAlarms,
-            notes:this.state.preNotes,
-            save:this.state.preSave
+            type: await this.props.match.params.id,
+            name:this.state.name,
+            genre:this.state.genre,
+            imgurl:this.state.imgurl,
+            alarms:this.state.alarms,
+            notes:this.state.notes,
         }
+        console.log(newPlant)
 
-        const resp = await fetch ('http://localhost:4001/',{
+        const resp = await fetch (`http://localhost:4001`,{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(newPlant)
         })
 
         const newPlants =await resp.json()
+        console.log(newPlants)
         this.setState({plants: newPlants })
     }
-    state = {plant:{ preName:"", preGenre:"", preImgurl:"", preBrowse:"", preAlarms:"", preNotes:"", preSave:"", plants:[]}}
+    state = { name:"", genre:"", imgurl:"", alarms:"", notes:"", redirect:false}
 
     render(){
+    
         return(
             <div>
                 <form>
                     Name: <input onChange={(e)=>{
-                        this.setState({name:e.target.value})
+                        this.setState({name: e.target.value})
                     }}type="text" vaule={this.state.name}/>
                     <br/>
                     Genre:<input onChange={(e)=> {
-                        this.setState({genre:e.target.value})
+                        this.setState({genre: e.target.value})
                     }}type="text" value={this.state.genre}/>
                 </form>
                 <picture>
@@ -51,8 +55,8 @@ export default class AddDetailsPage extends Component{
                     Notes:
                     <textarea></textarea>
                     <br/>
-                    <button onClick={this.savePlant}>Save</button>
-                    {/* <button type="submit">Save</button> */}
+                    {/* <button onClick={this.savePlant}>Save</button> */}
+                    <button type="submit">Save</button>
                 </form>
             </div>
         )

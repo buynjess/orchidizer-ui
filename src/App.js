@@ -6,7 +6,7 @@ import AddDetailsPage from './AddDetailsPage';
 import Veiwpage from './VeiwPage';
 
 class App extends Component {
-  
+
   savePlant = () => {
 
   }

@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
-import Main from './Main';
+import React, { Component } from 'react'
+import Main from './Main'
 import { Switch, Route} from 'react-router-dom'
 import './App.css'
-import AddDetailsPage from './AddDetailsPage';
-import Veiwpage from './VeiwPage';
+import AddDetailsPage from './AddDetailsPage'
+import Veiwpage from './VeiwPage'
 
 class App extends Component {
 
+  state = { name:"", genre:"", imgurl:"", alarms:"", notes:"", redirect:false}
+  state = {
+    plants: []
+}
   savePlant = () => {
 
   }

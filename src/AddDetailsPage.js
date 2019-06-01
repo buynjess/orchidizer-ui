@@ -26,8 +26,7 @@ export default class AddDetailsPage extends Component{
         console.log(newPlants)
         this.setState({plants: newPlants })
     }
-    state = { name:"", genre:"", imgurl:"", alarms:"", notes:"", redirect:false}
-
+    
     render(){
     
         return(
@@ -62,4 +61,3 @@ export default class AddDetailsPage extends Component{
         )
     }
 }
-   
